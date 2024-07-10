@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import InfiniteScroll from "react-infinite-scroll-component";
 import Masonry, { ResponsiveMasonry } from "react-responsive-masonry";
 import AllAlbums from "../../lib/types";
 import { fetchAlbumPhotos, fetchAlbums } from "../../lib/fetchAction";

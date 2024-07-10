@@ -28,7 +28,13 @@ const AlbumPhotos: FC<Props> = ({ photos, loading }) => {
             {photos.map((data: any) => (
               <img
                 key={data.id}
-                src={data?.url}
+                src={
+                  data?.url?.includes("png") ||
+                  data?.url?.includes("jpg") ||
+                  data?.url?.includes("jpeg")
+                    ? data?.url
+                    : albumCover
+                }
                 alt="artist"
                 style={{
                   width: "100%",

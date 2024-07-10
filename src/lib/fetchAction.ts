@@ -196,3 +196,17 @@ export const updateTweet = async (tweetId: number, tweetData: any) => {
     throw error;
   }
 };
+
+export const fetchTweetDetails = async (tweetId: number) => {
+  try {
+    const response = await fetch(`${baseURL}/comments/${tweetId}`);
+    if (!response.ok) {
+      throw new Error(`HTTP error status - ${response.status}`);
+    }
+    const tweet = await response.json();
+    return tweet;
+  } catch (error) {
+    console.error("Error fetching tweet details:", error);
+    throw error;
+  }
+};
