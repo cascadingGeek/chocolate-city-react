@@ -31,7 +31,7 @@ const Tweets = () => {
 
   return (
     <div className="w-full h-[100vh] overflow-y-auto scrollbar-hide pt-48 pb-10 px-10 relative">
-      <div className="w-full flex items-center justify-between fixed top-[85px] md:top-24 lg:top-20 xl:top-20 2xl:top-20 left-0 z-10 bg-[#02021a] px-10">
+      <div className="w-full flex items-center justify-between fixed top-[85px] md:top-24 lg:top-20 xl:top-20 2xl:top-[90px] left-0 z-10 bg-[#02021a] px-10">
         <h2 className="text-lg md:text-xl lg:text-[30px] xl:text-[30px] 2xl:text-[30px] font-bold mb-10">
           {" "}
           All Tweets
