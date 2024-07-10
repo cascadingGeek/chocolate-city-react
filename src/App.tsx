@@ -24,13 +24,13 @@ function App() {
             <img src={logo} className="w-20 h-auto" alt="logo" />{" "}
           </Link>
           <ul className="hidden md:flex lg:flex xl:flex 2xl:flex items-center gap-20 w-full justify-center">
-            <li>
+            <li className="cursor-pointer">
               <Link to="/artists">Artists</Link>
             </li>
-            <li>
+            <li className="cursor-pointer">
               <Link to="/albums">Albums</Link>
             </li>
-            <li>
+            <li className="cursor-pointer">
               <Link to="/tweet">Tweets</Link>
             </li>
           </ul>
