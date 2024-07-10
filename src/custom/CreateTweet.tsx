@@ -2,7 +2,7 @@ import React, { FC, useState, useEffect } from "react";
 import { Button } from "../components/ui/button";
 import { postTweet } from "../lib/fetchAction";
 import { useToast } from "../components/ui/use-toast";
-import { useTweetToUpdateStore } from "../store/inputStore";
+import { useTweetToCreateStore } from "../store/createStore";
 import { Dialog, DialogContent } from "../components/ui/dialog";
 
 interface Props {
@@ -19,9 +19,9 @@ const CreateTweet: FC<Props> = ({ handleFetchTweets }) => {
     name,
     email,
     body,
-    setTweetToUpdate,
-    resetTweetToUpdate,
-  } = useTweetToUpdateStore();
+    setTweetToCreate,
+    resetTweetToCreate,
+  } = useTweetToCreateStore();
   const [errors, setErrors] = useState({
     postId: false,
     id: false,
@@ -47,7 +47,7 @@ const CreateTweet: FC<Props> = ({ handleFetchTweets }) => {
   };
 
   const handleChange = (field: keyof typeof errors, value: string) => {
-    setTweetToUpdate(field, value);
+    setTweetToCreate(field, value);
     setErrors((prev) => ({
       ...prev,
       [field]: !validateInput(field, value),
@@ -80,12 +80,12 @@ const CreateTweet: FC<Props> = ({ handleFetchTweets }) => {
     setLoading(true);
     try {
       const response = await postTweet({ postId, id, name, email, body });
-      if (response?.status === 200) {
+      if (response?.status === 201) {
         toast({
           title: "Created",
           description: "Tweet has been created",
         });
-        resetTweetToUpdate();
+        resetTweetToCreate();
         setErrors({
           postId: false,
           id: false,

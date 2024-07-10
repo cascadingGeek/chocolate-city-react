@@ -2,7 +2,7 @@ import React, { FC, useState, useEffect } from "react";
 import { Button } from "../components/ui/button";
 import { updateTweet, fetchTweetDetails } from "../lib/fetchAction";
 import { useToast } from "../components/ui/use-toast";
-import { useTweetToUpdateStore } from "../store/inputStore";
+import { useTweetToUpdateStore } from "../store/updateStore";
 import { Dialog, DialogContent } from "../components/ui/dialog";
 import { RiEdit2Fill } from "react-icons/ri";
 
