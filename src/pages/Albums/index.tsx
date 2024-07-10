@@ -73,7 +73,9 @@ const Albums = () => {
           </div>
         </DialogContent>
       </Dialog>
-      <h2 className="text-[30px] font-bold mb-10">All Albums</h2>
+      <h2 className="text-lg md:text-xl lg:text-[30px] xl:text-[30px] 2xl:text-[30px] font-bold mb-10">
+        All Albums
+      </h2>
       {loading ? (
         <div className="flex flex-col justify-center items-center h-[70vh] w-full gap-3">
           <ImSpinner2 className="text-[#18283f] h-20 w-20 animate-spin" />
@@ -85,7 +87,7 @@ const Albums = () => {
         </div>
       ) : (
         <ResponsiveMasonry
-          columnsCountBreakPoints={{ 300: 2, 500: 3, 700: 4, 900: 5 }}
+          columnsCountBreakPoints={{ 300: 1, 500: 3, 700: 4, 900: 5 }}
         >
           <Masonry gutter="20px">
             {albums.map((data, index) => (
